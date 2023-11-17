@@ -5,7 +5,7 @@
   "description": "GitHub action to check if an artifact exists.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "swc src/ -d dist/"
   },
   "repository": {
     "type": "git",
