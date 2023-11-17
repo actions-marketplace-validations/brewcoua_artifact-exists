@@ -18,7 +18,7 @@ async function main() {
         repo,
     });
 
-    const artifactExists = response.data.artifacts.some((artifact) => artifact.name === artifact);
+    const artifactExists = response.data.artifacts.some((artifact: ANY) => artifact.name === artifact);
     exportVariable('ARTIFACT_EXISTS', artifactExists);
 }
 

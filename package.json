@@ -2,11 +2,16 @@
   "name": "artifact-exists",
   "version": "1.0.1",
   "private": true,
-  "type": "module",
   "description": "GitHub action to check if an artifact exists.",
   "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
-    "build": "swc src/ -d dist/"
+    "build": "ncc build src/index.ts --license licenses.txt"
   },
   "repository": {
     "type": "git",
@@ -28,8 +33,8 @@
     "@actions/github": "^6.0.0"
   },
   "devDependencies": {
-    "@swc/cli": "^0.1.63",
-    "@swc/core": "^1.3.96",
+    "@types/node": "^20.9.1",
+    "@vercel/ncc": "^0.38.1",
     "typescript": "^5.2.2"
   }
 }
