@@ -1,7 +1,8 @@
 {
   "name": "artifact-exists",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
+  "type": "module",
   "description": "GitHub action to check if an artifact exists.",
   "main": "dist/index.js",
   "scripts": {
