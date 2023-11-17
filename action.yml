@@ -1,0 +1,21 @@
+name: "Artifact exists"
+author: "brewcoua"
+description: "Check if an artifact exists."
+branding:
+  icon: "archive"
+  color: "purple"
+inputs:
+  name:
+    description: "Name of the artifact (e.g. test.tar.gz)"
+    required: true
+  repository:
+    description: "Full repository path"
+    required: false
+    default: "${{ github.repository }}"
+  token:
+    description: "Token to use for authentication"
+    required: false
+    default: "${{ github.token }}"
+runs:
+  using: "node20"
+  main: "dist/index.js"
