@@ -30365,7 +30365,7 @@ async function main() {
     const artifact = (0, core_1.getInput)('name'), repository = (0, core_1.getInput)('repository'), token = (0, core_1.getInput)('token');
     const [owner, repo] = repository.split('/');
     const octokit = (0, github_1.getOctokit)(token);
-    const response = await octokit.rest.listArtifactsForRepo({
+    const response = await octokit.rest.actions.listArtifactsForRepo({
         owner,
         repo,
     });

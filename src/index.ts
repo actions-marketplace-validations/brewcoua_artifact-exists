@@ -1,9 +1,6 @@
 import { getInput, exportVariable } from '@actions/core';
 import { getOctokit } from '@actions/github';
 
-// @ts-ignore
-type ANY = any;
-
 async function main() {
     const artifact = getInput('name'),
         repository = getInput('repository'),
@@ -11,14 +8,14 @@ async function main() {
 
     const [owner, repo] = repository.split('/');
 
-    const octokit: ANY = getOctokit(token);
+    const octokit: any = getOctokit(token);
 
-    const response = await octokit.rest.listArtifactsForRepo({
+    const response = await octokit.rest.actions.listArtifactsForRepo({
         owner,
         repo,
     });
 
-    const artifactExists = response.data.artifacts.some((artifact: ANY) => artifact.name === artifact);
+    const artifactExists = response.data.artifacts.some((artifact: any) => artifact.name === artifact);
     exportVariable('ARTIFACT_EXISTS', artifactExists);
 }
 
